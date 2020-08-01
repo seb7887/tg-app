@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { ApolloProvider } from '@apollo/client'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import * as eva from '@eva-design/eva'
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components'
+import { EvaIconsPack } from '@ui-kitten/eva-icons'
+
+import { client } from '@lib/client'
+import SignInScreen from '@screens/SignIn'
+import HomeScreen from '@screens/Home'
+
+const AppNav = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <ApolloProvider client={client}>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.dark}>
+        <NavigationContainer>
+          <AppNav.Navigator
+            mode="modal"
+            headerMode="none"
+            screenOptions={{ gestureDirection: 'horizontal' }}
+            initialRouteName="Home"
+          >
+            <AppNav.Screen name="SignIn" component={SignInScreen} />
+            <AppNav.Screen name="Home" component={HomeScreen} />
+          </AppNav.Navigator>
+        </NavigationContainer>
+      </ApplicationProvider>
+    </ApolloProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
