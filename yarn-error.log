@@ -1,5 +1,5 @@
 Arguments: 
-  /home/seb/.nvm/versions/node/v12.18.3/bin/node /usr/share/yarn/bin/yarn.js add @react-native-commmunity/async-storage
+  /home/seb/.nvm/versions/node/v12.18.3/bin/node /usr/share/yarn/bin/yarn.js add -D @types/react-swipeable-drawer
 
 PATH: 
   /home/seb/.nvm/versions/node/v12.18.3/bin:/home/seb/.cargo/bin:/home/seb/.cargo/bin:/home/seb/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react-native-commmunity%2fasync-storage: Not found
+  Error: https://registry.yarnpkg.com/@types%2freact-swipeable-drawer: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:315:20)
@@ -39,6 +39,7 @@ npm manifest:
     "dependencies": {
       "@apollo/client": "^3.1.1",
       "@eva-design/eva": "^2.0.0",
+      "@react-native-community/async-storage": "~1.11.0",
       "@react-native-community/masked-view": "0.1.10",
       "@react-navigation/native": "^5.7.2",
       "@react-navigation/stack": "^5.8.0",
@@ -55,7 +56,8 @@ npm manifest:
       "react-native-safe-area-context": "~3.0.7",
       "react-native-screens": "~2.9.0",
       "react-native-svg": "12.1.0",
-      "react-native-web": "~0.11.7"
+      "react-native-web": "~0.11.7",
+      "react-swipeable-drawer": "^3.1.0"
     },
     "devDependencies": {
       "@babel/core": "^7.8.6",
@@ -1219,6 +1221,13 @@ Lockfile:
       "@types/istanbul-reports" "^1.1.1"
       "@types/yargs" "^15.0.0"
       chalk "^3.0.0"
+  
+  "@react-native-community/async-storage@~1.11.0":
+    version "1.11.0"
+    resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.11.0.tgz#bf81b8813080846f150c67f531987c429b442166"
+    integrity sha512-Pq9LlmvtCEKAGdkyrgTcRxNh2fnHFykEj2qnRYijOl1pDIl2MkD5IxaXu5eOL0wgOtAl4U//ff4z40Td6XR5rw==
+    dependencies:
+      deep-assign "^3.0.0"
   
   "@react-native-community/cli-debugger-ui@^4.9.0":
     version "4.9.0"
@@ -4869,6 +4878,11 @@ Lockfile:
     version "0.4.3"
     resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.4.3.tgz#966f1750c191672e76e16c2efa569150cc73ab53"
     integrity sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==
+  
+  react-swipeable-drawer@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/react-swipeable-drawer/-/react-swipeable-drawer-3.1.0.tgz#060298ed8b5e4cd711bac0dbb252dbfe96484c5e"
+    integrity sha512-El7XWEFePXeWnoAvZrJwHMSkk5AZOPZIwaXWxBbzwX2V34V556t26ZDPvBxg4yF9e4X1FVuYFKtu9TuYXsCSwQ==
   
   react-timer-mixin@^0.13.4:
     version "0.13.4"

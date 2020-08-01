@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
     ;(async () => {
       if (data && data.signin.jwt) {
         try {
-          console.log('d', data.signin)
+          console.log(data.signin)
           await AsyncStorage.setItem('jwt', data.signin.jwt)
           navigation.navigate('Home')
         } catch (err) {
