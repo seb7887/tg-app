@@ -10,19 +10,22 @@ import {
   Icon,
   TopNavigation,
   TopNavigationAction,
-  Drawer,
-  DrawerItem,
+  Spinner,
 } from '@ui-kitten/components'
 
 import { CHATS } from '@graphql/chats'
+import ChatList from '@components/ChatList'
 
 const MenuIcon = () => (
   <Icon name="menu-outline" style={style.icon} fill="#F2F6FF" />
 )
 
-const Home: React.FC = () => {
+interface Props {
+  navigation: any
+}
+
+const Home: React.FC<Props> = props => {
   const [token, setToken] = useState<string | null>(null)
-  const [showDrawer, setShowDrawer] = useState<boolean>(false)
   const navigation = useNavigation()
   const { loading, data } = useQuery(CHATS, {
     skip: !token,
@@ -44,12 +47,7 @@ const Home: React.FC = () => {
     })()
   }, [])
 
-  const signOut = async () => {
-    await AsyncStorage.removeItem('jwt')
-    navigation.navigate('SignIn')
-  }
-
-  const toggleOpenDrawer = () => setShowDrawer(!showDrawer)
+  const toggleOpenDrawer = () => props.navigation.toggleDrawer()
 
   const renderMenuAction = () => (
     <TopNavigationAction icon={MenuIcon} onPress={toggleOpenDrawer} />
@@ -72,16 +70,7 @@ const Home: React.FC = () => {
         <Divider />
       </Layout>
 
-      {showDrawer && (
-        <Layout style={style.drawer}>
-          <Drawer>
-            <DrawerItem title="New Chat" />
-            <DrawerItem title="Sign Out" onPress={signOut} />
-          </Drawer>
-        </Layout>
-      )}
-
-      {loading && <Text category="h4">Loading</Text>}
+      {loading || !data ? <Spinner /> : <ChatList chats={data.chats} />}
     </Layout>
   )
 }

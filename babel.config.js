@@ -13,6 +13,7 @@ module.exports = function (api) {
             '@screens': './src/screens',
             '@lib': './src/lib',
             '@graphql': './src/graphql',
+            '@navigation': './src/navigation',
             '@assets': './assets',
           },
         },
