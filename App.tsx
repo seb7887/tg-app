@@ -12,6 +12,7 @@ import DrawerContent from '@navigation/DrawerContent'
 import SignInScreen from '@screens/SignIn'
 import HomeScreen from '@screens/Home'
 import NewChatScreen from '@screens/NewChat'
+import ChatScreen from '@screens/Chat'
 
 const AppNav = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -50,6 +51,7 @@ export default function App() {
           >
             <AppNav.Screen name="SignIn" component={SignInScreen} />
             <AppNav.Screen name="HomeNav" component={HomeNav} />
+            <AppNav.Screen name="Chat" component={ChatScreen} />
           </AppNav.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

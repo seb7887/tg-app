@@ -5,6 +5,22 @@ export const CHATS = gql`
     chats {
       id
       name
+      participants {
+        id
+        name
+      }
+      messages {
+        content
+        sender {
+          id
+          name
+        }
+        recipient {
+          id
+          name
+        }
+        createdAt
+      }
       lastMessage {
         content
       }
