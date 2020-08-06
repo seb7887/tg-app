@@ -27,3 +27,14 @@ export const CHATS = gql`
     }
   }
 `
+
+export const USERS = gql`
+  query Users {
+    chats {
+      participants {
+        id
+        name
+      }
+    }
+  }
+`
