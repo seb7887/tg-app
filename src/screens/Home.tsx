@@ -55,8 +55,6 @@ const Home: React.FC<Props> = props => {
 
   const renderTitle = () => <Text category="h4">TG CHAT</Text>
 
-  console.log('data', data)
-
   return (
     <Layout style={style.layout}>
       <StatusBar barStyle="light-content" />

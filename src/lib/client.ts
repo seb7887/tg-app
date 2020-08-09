@@ -6,8 +6,9 @@ import {
 } from '@apollo/client'
 import { WebSocketLink } from '@apollo/client/link/ws'
 import { getMainDefinition } from '@apollo/client/utilities'
+import Constants from 'expo-constants'
 
-const HTTP_LINK = 'https://tg-clone-db.herokuapp.com/graphql'
+const HTTP_LINK = Constants.manifest.extra.apiUrl
 const WS_LINK = HTTP_LINK.replace(/^https?/, 'ws')
 
 const httpLink = createHttpLink({ uri: HTTP_LINK })
