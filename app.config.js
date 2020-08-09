@@ -19,6 +19,9 @@ export default {
     ios: {
       supportsTablet: true,
     },
+    android: {
+      package: 'org.example.tgapp',
+    },
     web: {
       favicon: './assets/favicon.png',
     },
